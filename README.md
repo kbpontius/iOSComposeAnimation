@@ -1,5 +1,5 @@
 # iOSComposeAnimation
-Leveraging UIPresentationController, this animation mimics the iOS Mail app's compose animation.
+Leveraging UIPresentationController, this animation mimics the iOS Mail app's compose animation. This is intended as a code example, not a drag-n-drop library for use in a production Xcode project.
 
 You can find the a great tutorial on UIPresentationController by Sam Davies here:
 https://www.shinobicontrols.com/blog/posts/2014/09/04/ios8-day-by-day-day-24-presentation-controllers
