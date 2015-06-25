@@ -10,7 +10,7 @@ Source code for Sam Davies' presentation: https://github.com/ShinobiControls/iOS
 A very helpful video WWDC 2014 related to UIPresentationController, in general, is `A Look Inside Presentation Controllers` found here:
 https://developer.apple.com/videos/wwdc/2014/
 
-Source code for the presentation is:
+Source code for the WWDC 2014 presentation is:
 https://developer.apple.com/library/ios/samplecode/LookInside/LookInsidePresentationControllersAdaptivityandCustomAnimatorObjects.zip
 
 Last but not least is our Stack Overflow conversation about this animation. If you have questions, please respond to this thread:
