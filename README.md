@@ -12,3 +12,6 @@ https://developer.apple.com/videos/wwdc/2014/
 
 Source code for the presentation is:
 https://developer.apple.com/library/ios/samplecode/LookInside/LookInsidePresentationControllersAdaptivityandCustomAnimatorObjects.zip
+
+Last but not least is our Stack Overflow conversation about this animation. If you have questions, please respond to this thread:
+<br/>http://stackoverflow.com/questions/29017403/replicating-the-style-of-the-ios-mail-apps-compose-function/29040354?noredirect=1
