@@ -192,9 +192,11 @@
 				TargetAttributes = {
 					22CF1C9919AFB208002D4F59 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 					};
 					22CF1CAB19AFB208002D4F59 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 22CF1C9919AFB208002D4F59;
 					};
 				};
@@ -377,6 +379,7 @@
 				INFOPLIST_FILE = BouncyPresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -387,6 +390,7 @@
 				INFOPLIST_FILE = BouncyPresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -405,6 +409,7 @@
 				INFOPLIST_FILE = BouncyPresentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BouncyPresent.app/BouncyPresent";
 			};
 			name = Debug;
@@ -420,6 +425,7 @@
 				INFOPLIST_FILE = BouncyPresentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BouncyPresent.app/BouncyPresent";
 			};
 			name = Release;

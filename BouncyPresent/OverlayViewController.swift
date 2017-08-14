@@ -23,8 +23,8 @@ class OverlayViewController: UIViewController {
     }
     
     
-    @IBAction func handleDismissedPressed(sender: AnyObject) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func handleDismissedPressed(_ sender: AnyObject) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
