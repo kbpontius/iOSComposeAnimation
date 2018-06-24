@@ -17,26 +17,15 @@
 import UIKit
 
 class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDelegate {
-    
-    func presentationControllerForPresentedViewController(presented: UIViewController,
-        presentingViewController presenting: UIViewController,
-        sourceViewController source: UIViewController) -> UIPresentationController? {
-            
-            return OverlayPresentationController(presentedViewController: presented,
-                presentingViewController: presenting)
-    }
-    
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController)-> UIViewControllerAnimatedTransitioning? {
-        var animator = BouncyViewControllerAnimator()
-        animator.isPresenting = true
-        
-        return animator
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        var animator = BouncyViewControllerAnimator()
-        animator.isPresenting = false
-        
-        return animator
-    }
+  func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    return OverlayPresentationController(presentedViewController: presented, presenting: presenting)
+  }
+
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return BouncyViewControllerAnimator(isPresenting: true)
+  }
+  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return BouncyViewControllerAnimator()
+  }
 }

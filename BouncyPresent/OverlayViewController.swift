@@ -17,14 +17,7 @@
 import UIKit
 
 class OverlayViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
-    @IBAction func handleDismissedPressed(sender: AnyObject) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+  @IBAction func handleDismissedPressed(sender: AnyObject) {
+    presentingViewController?.dismiss(animated: true)
+  }    
 }
