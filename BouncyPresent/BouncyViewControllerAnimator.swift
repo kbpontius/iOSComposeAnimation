@@ -17,45 +17,49 @@
 import UIKit
 
 class BouncyViewControllerAnimator : NSObject, UIViewControllerAnimatedTransitioning {
-    var isPresenting: Bool = false
+  var isPresenting: Bool = false
+  
+  convenience init(isPresenting: Bool = false) {
+    self.init()
+    self.isPresenting = isPresenting
+  }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 0.8
+  func transitionDuration(using: UIViewControllerContextTransitioning?) -> TimeInterval {
+      return 0.8
+  }
+  
+  func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    guard let fromView = transitionContext.viewController(forKey: .from)?.view else { return }
+    guard let toView = transitionContext.viewController(forKey: .to)?.view else { return }
+
+    var center = toView.center
+
+    if isPresenting {
+      toView.center.y = toView.bounds.size.height
+      transitionContext.containerView.addSubview(toView)
+    } else {
+      center.y = toView.bounds.size.height + fromView.bounds.size.height
     }
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        
-        let fromView = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)?.view
-        let toView = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)?.view
-        
-        var center:CGPoint?
-        
-        if isPresenting {
-            center = toView!.center
-            toView!.center = CGPointMake(center!.x, toView!.bounds.size.height)
-            transitionContext.containerView().addSubview(toView!)
+
+    UIView.animate(withDuration: self.transitionDuration(using: transitionContext),
+      delay: 0,
+      usingSpringWithDamping: 300,
+      initialSpringVelocity: 10.0,
+      options: [],
+      animations: {
+        if self.isPresenting {
+          toView.center = center
+          fromView.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
         } else {
-            center = CGPointMake(toView!.center.x, toView!.bounds.size.height + fromView!.bounds.size.height)
+          fromView.center = center
+          toView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
-        
-        UIView.animateWithDuration(self.transitionDuration(transitionContext),
-            delay: 0, usingSpringWithDamping: 300, initialSpringVelocity: 10.0, options: nil,
-            animations: {
-                if self.isPresenting {
-                    toView!.center = center!
-                    fromView!.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.92, 0.92)
-                } else {
-                    fromView!.center = center!
-                    toView!.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
-                }
-            }, completion: {
-                _ in
-                
-                if !self.isPresenting {
-                    fromView!.removeFromSuperview()
-                }
-                
-                transitionContext.completeTransition(true)
-        })
-    }
+      }) { _ in
+        if !self.isPresenting {
+          fromView.removeFromSuperview()
+        }
+
+        transitionContext.completeTransition(true)
+      }
+  }
 }

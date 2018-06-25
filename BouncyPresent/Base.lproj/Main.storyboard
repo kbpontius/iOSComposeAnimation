@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,33 +19,33 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-ZB-gk6" customClass="PaddedButton" customModule="BouncyPresent" customModuleProvider="target">
-                                <rect key="frame" x="218" y="320" width="165" height="48"/>
-                                <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="105.5" y="353.5" width="165" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Bouncy Present">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleBouncyPresentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zu3-OO-QxD"/>
+                                    <action selector="handleBouncyPresentPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFS-Lg-6w6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBT-9x-GXJ" customClass="PaddedButton" customModule="BouncyPresent" customModuleProvider="target">
-                                <rect key="frame" x="222" y="232" width="156" height="48"/>
-                                <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="109.5" y="265.5" width="156" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Bouncy Segue">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="hI7-7f-OS1" kind="presentation" identifier="bouncySegue" id="wnM-v8-hAw"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.44098753670000002" green="0.84555206469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.44098753670000002" green="0.84555206469999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="QBT-9x-GXJ" secondAttribute="bottom" constant="20" id="Muf-nM-HMu"/>
                             <constraint firstAttribute="centerY" secondItem="vgx-ZB-gk6" secondAttribute="top" constant="-20" id="gc8-07-3Uv"/>
@@ -62,15 +67,15 @@
                         <viewControllerLayoutGuide type="bottom" id="pvq-Ht-ist"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jhQ-lS-h6y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQZ-Qw-6tB" customClass="PaddedButton" customModule="BouncyPresent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="492" width="600" height="68"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="68"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Dismiss">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
@@ -78,11 +83,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="handleDismissedPressed:" destination="hI7-7f-OS1" eventType="touchUpInside" id="m2p-9U-i7O"/>
+                                    <action selector="handleDismissedPressedWithSender:" destination="hI7-7f-OS1" eventType="touchUpInside" id="v0W-UD-HBH"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bQZ-Qw-6tB" secondAttribute="trailing" id="Udv-cK-PLG"/>
                             <constraint firstItem="bQZ-Qw-6tB" firstAttribute="leading" secondItem="jhQ-lS-h6y" secondAttribute="leading" id="YmS-eP-596"/>

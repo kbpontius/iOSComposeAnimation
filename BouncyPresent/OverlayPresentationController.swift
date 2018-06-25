@@ -17,44 +17,38 @@
 import UIKit
 
 class OverlayPresentationController: UIPresentationController {
-   let dimmingView = UIView()
-  
-  override init(presentedViewController: UIViewController!, presentingViewController: UIViewController!) {
-    super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
-    dimmingView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
-  }
+  let dimmingView: UIView = {
+    let view = UIView()
+    view.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
+    return view
+  }()
   
   override func presentationTransitionWillBegin() {
-    dimmingView.frame = containerView.bounds
+    dimmingView.frame = containerView!.bounds
     dimmingView.alpha = 0.0
-    containerView.insertSubview(dimmingView, atIndex: 0)
+    containerView!.insertSubview(dimmingView, at: 0)
     
-    presentedViewController.transitionCoordinator()?.animateAlongsideTransition({
-      context in
+    presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
       self.dimmingView.alpha = 1.0
-    }, completion: nil)
-  }
-  
-  override func dismissalTransitionWillBegin() {
-    presentedViewController.transitionCoordinator()?.animateAlongsideTransition({
-      context in
-      self.dimmingView.alpha = 0.0
-    }, completion: {
-      context in
-      self.dimmingView.removeFromSuperview()
     })
   }
   
-  override func frameOfPresentedViewInContainerView() -> CGRect {
-    let boundHeight = containerView.bounds.height
-    let boundWidth = containerView.bounds.width
-    
-    let bound = CGRectMake(0, 40, boundWidth, boundHeight - 40.0)
-    return bound
+  override func dismissalTransitionWillBegin() {
+    presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
+      self.dimmingView.alpha = 0.0
+    }) { _ in
+      self.dimmingView.removeFromSuperview()
+    }
+  }
+  
+  override var frameOfPresentedViewInContainerView: CGRect {
+    var size = containerView!.bounds.size
+    size.height = size.height - 40
+    return CGRect(origin: CGPoint(x: 0, y: 40), size: size)
   }
   
   override func containerViewWillLayoutSubviews() {
-    dimmingView.frame = containerView.bounds
-    presentedView().frame = frameOfPresentedViewInContainerView()
+    dimmingView.frame = containerView!.bounds
+    presentedView?.frame = frameOfPresentedViewInContainerView
   }
 }

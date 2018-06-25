@@ -17,26 +17,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "bouncySegue" {
-            let overlayVC = segue.destinationViewController as! UIViewController
-            prepareOverlayVC(overlayVC)
-        }
+  let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+    if segue.identifier == "bouncySegue" {
+      prepareOverlay(viewController: segue.destination)
     }
+  }
     
-    @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
-        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as! UIViewController
-        prepareOverlayVC(overlayVC)
-        presentViewController(overlayVC, animated: true, completion: nil)
-    }
+  @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
+    let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
+    prepareOverlay(viewController: overlayViewController)
+    present(overlayViewController, animated: true)
+  }
     
-    private func prepareOverlayVC(overlayVC: UIViewController) {
-        overlayVC.transitioningDelegate = overlayTransitioningDelegate
-        overlayVC.modalPresentationStyle = .Custom
-    }
-    
+  private func prepareOverlay(viewController: UIViewController) {
+    viewController.transitioningDelegate = overlayTransitioningDelegate
+    viewController.modalPresentationStyle = .custom
+  }
 }
+
+
 
