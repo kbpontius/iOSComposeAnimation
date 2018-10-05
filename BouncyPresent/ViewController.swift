@@ -26,7 +26,9 @@ class ViewController: UIViewController {
   }
     
   @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
-    let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
+    guard let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") else {
+        fatalError("Unable to instantiate ViewController with identifier 'overlayViewController'")
+    }
     prepareOverlay(viewController: overlayViewController)
     present(overlayViewController, animated: true)
   }
