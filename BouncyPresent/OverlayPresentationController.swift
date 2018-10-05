@@ -36,6 +36,12 @@ class OverlayPresentationController: UIPresentationController {
   override func dismissalTransitionWillBegin() {
     presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
       self.dimmingView.alpha = 0.0
+
+      // This is a workaround for the bug(?) in UIPresentationController on iOS11 + iOS12
+      // whereby the frame of presentingViewController gets corrupted after screen rotation
+      self.presentingViewController.view.frame = CGRect(x: 0.0, y: 0.0,
+                                                        width: UIScreen.main.bounds.size.width,
+                                                        height: UIScreen.main.bounds.size.height)
     }) { _ in
       self.dimmingView.removeFromSuperview()
     }
